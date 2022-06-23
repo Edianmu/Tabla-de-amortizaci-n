@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblResultado = new System.Windows.Forms.Label();
             this.lblTotalCuotas = new System.Windows.Forms.Label();
@@ -62,7 +65,7 @@
             this.groupBox1.Controls.Add(this.lblMonto);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 120);
+            this.groupBox1.Size = new System.Drawing.Size(437, 120);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Crédito";
@@ -70,7 +73,7 @@
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(301, 60);
+            this.lblResultado.Location = new System.Drawing.Point(291, 60);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(13, 15);
             this.lblResultado.TabIndex = 7;
@@ -79,7 +82,7 @@
             // lblTotalCuotas
             // 
             this.lblTotalCuotas.AutoSize = true;
-            this.lblTotalCuotas.Location = new System.Drawing.Point(220, 60);
+            this.lblTotalCuotas.Location = new System.Drawing.Point(210, 60);
             this.lblTotalCuotas.Name = "lblTotalCuotas";
             this.lblTotalCuotas.Size = new System.Drawing.Size(72, 15);
             this.lblTotalCuotas.TabIndex = 6;
@@ -135,9 +138,9 @@
             // 
             // btnCalcularVar
             // 
-            this.btnCalcularVar.Location = new System.Drawing.Point(450, 86);
+            this.btnCalcularVar.Location = new System.Drawing.Point(475, 86);
             this.btnCalcularVar.Name = "btnCalcularVar";
-            this.btnCalcularVar.Size = new System.Drawing.Size(158, 30);
+            this.btnCalcularVar.Size = new System.Drawing.Size(125, 30);
             this.btnCalcularVar.TabIndex = 6;
             this.btnCalcularVar.Text = "Calcular Cuota Variable";
             this.btnCalcularVar.UseVisualStyleBackColor = true;
@@ -145,9 +148,9 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(450, 43);
+            this.btnCalcular.Location = new System.Drawing.Point(475, 43);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(158, 28);
+            this.btnCalcular.Size = new System.Drawing.Size(125, 28);
             this.btnCalcular.TabIndex = 2;
             this.btnCalcular.Text = "Calcular Cuota Fija";
             this.btnCalcular.UseVisualStyleBackColor = true;
@@ -155,6 +158,23 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.periodo,
@@ -163,10 +183,32 @@
             this.intereses,
             this.abonoCap,
             this.saldoFinal});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 138);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 138);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(616, 457);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 501);
+            this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 1;
             // 
             // periodo
@@ -181,38 +223,44 @@
             // 
             this.saldoInicial.HeaderText = "Saldo Inicial";
             this.saldoInicial.Name = "saldoInicial";
+            this.saldoInicial.Width = 88;
             // 
             // valorCuota
             // 
             this.valorCuota.HeaderText = "Cuota";
             this.valorCuota.Name = "valorCuota";
+            this.valorCuota.Width = 64;
             // 
             // intereses
             // 
             this.intereses.HeaderText = "Intereses";
             this.intereses.Name = "intereses";
+            this.intereses.Width = 78;
             // 
             // abonoCap
             // 
             this.abonoCap.HeaderText = "Abono a Capital";
             this.abonoCap.Name = "abonoCap";
+            this.abonoCap.Width = 107;
             // 
             // saldoFinal
             // 
+            this.saldoFinal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.saldoFinal.HeaderText = "Saldo Final";
             this.saldoFinal.Name = "saldoFinal";
+            this.saldoFinal.Width = 82;
             // 
             // Formulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 607);
+            this.ClientSize = new System.Drawing.Size(621, 663);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.btnCalcularVar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Formulario";
-            this.Text = "Tabla de Amortización";
+            this.Load += new System.EventHandler(this.Formulario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -233,14 +281,14 @@
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Button btnCalcularVar;
+        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Label lblTotalCuotas;
         private System.Windows.Forms.DataGridViewTextBoxColumn periodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn saldoInicial;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorCuota;
         private System.Windows.Forms.DataGridViewTextBoxColumn intereses;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonoCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn saldoFinal;
-        private System.Windows.Forms.Button btnCalcularVar;
-        private System.Windows.Forms.Label lblResultado;
-        private System.Windows.Forms.Label lblTotalCuotas;
     }
 }

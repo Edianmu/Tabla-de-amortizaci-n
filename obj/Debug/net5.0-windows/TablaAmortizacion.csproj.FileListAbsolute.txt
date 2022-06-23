@@ -34,3 +34,21 @@ C:\Users\edmunoz\Desktop\projects\CopiaTablaAmortizacion2\obj\Debug\net5.0-windo
 C:\Users\edmunoz\Desktop\projects\CopiaTablaAmortizacion2\obj\Debug\net5.0-windows\TablaAmortizacion.pdb
 C:\Users\edmunoz\Desktop\projects\CopiaTablaAmortizacion2\obj\Debug\net5.0-windows\TablaAmortizacion.genruntimeconfig.cache
 C:\Users\edmunoz\Desktop\projects\CopiaTablaAmortizacion2\obj\Debug\net5.0-windows\ref\TablaAmortizacion.dll
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\bin\Debug\net5.0-windows\TablaAmortizacion.exe
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\bin\Debug\net5.0-windows\TablaAmortizacion.deps.json
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\bin\Debug\net5.0-windows\TablaAmortizacion.runtimeconfig.json
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\bin\Debug\net5.0-windows\TablaAmortizacion.runtimeconfig.dev.json
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\bin\Debug\net5.0-windows\TablaAmortizacion.dll
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\bin\Debug\net5.0-windows\TablaAmortizacion.pdb
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.csproj.AssemblyReference.cache
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.Formulario.resources
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.csproj.GenerateResource.cache
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.AssemblyInfoInputs.cache
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.AssemblyInfo.cs
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.csproj.CoreCompileInputs.cache
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.dll
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\refint\TablaAmortizacion.dll
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.pdb
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\TablaAmortizacion.genruntimeconfig.cache
+C:\Users\edmunoz\Desktop\projects\Tabla de amortización\obj\Debug\net5.0-windows\ref\TablaAmortizacion.dll
