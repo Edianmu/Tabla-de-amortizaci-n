@@ -20,20 +20,23 @@ namespace TablaAmortizacion
         private void btnCalcular_Click(object sender, EventArgs e) //EVENTO CLICK
         {
             dataGridView1.Rows.Clear(); //CUANDO SE HACE CLICK SE LIMPIA LA GRILLA
-            calcular(); //INICIA METODO
+            calcularF(); //INICIA METODO
         }
 
-        private void calcular()  //METODO PARA CALCULAR CUOTA FIJA
+        private void calcularF()  //METODO PARA CALCULAR CUOTA FIJA
         {
             try
             {
-                double monto = Convert.ToDouble(this.textMonto.Text);
-                double tasainteres = Convert.ToDouble(this.textInteres.Text);
-                int plazos = Convert.ToInt16(this.textPlazos.Text);
+                decimal monto =
+                    Convert.ToDecimal(this.textMonto.Text);
+                decimal tasainteres =
+                    Convert.ToDecimal(this.textInteres.Text);
+                int plazos =
+                    Convert.ToInt16(this.textPlazos.Text);
 
                 tasainteres = tasainteres / 100;
 
-                double intereses = 0,
+                decimal intereses = 0,
                     abonoCap = 0,
                     saldoFinal = 0,
                     sumaCuotas = 0,
@@ -43,25 +46,38 @@ namespace TablaAmortizacion
                 {
 
                     //FORMUA DE CUOTA FIJA
-                    //double valorCuota = (double)(monto * (Math.Pow(1 + tasainteres, plazos) * tasainteres) / (Math.Pow(1 + tasainteres, plazos) - 1));
-                    double resultado = (1 - Math.Pow(1 + tasainteres, plazos * -1)) / tasainteres;
-                    double valorCuota = Math.Round(monto / resultado, 2);
+                   
+                    decimal resultado = 
+                        ((1 - (decimal)Math.Pow(1 + (double)tasainteres, plazos * -1)) / tasainteres);
+                    decimal valorCuota =
+                        Math.Round(monto / resultado, 2);
 
                     saldoFinal = saldoInicial;
 
                     for (int I = 1; I <= plazos; I++)
                     {
-                        var saldoFinalAnterior = Math.Round(saldoFinal, 2); //SE GUARDA VARIABLE ANTERIOR
-                        intereses = Math.Round(saldoFinal * tasainteres, 2);
-                        abonoCap = Math.Round(valorCuota - intereses, 2);
-                        saldoFinal = Math.Round(saldoFinal - abonoCap, 2);
+                        var saldoFinalAnterior = 
+                            Math.Round(saldoFinal, 2); //SE GUARDA VARIABLE ANTERIOR
+                        intereses = 
+                            Math.Round(saldoFinal * tasainteres, 2);
+                        abonoCap = 
+                            Math.Round(valorCuota - intereses, 2);
+                        saldoFinal = 
+                            Math.Round(saldoFinal - abonoCap, 2);
+
+                        if (saldoFinal < 0.5m )
+                        {
+                            saldoFinal = 0;
+                        }
 
                         dataGridView1.Rows.Add(I, saldoFinalAnterior.ToString(), valorCuota, intereses, abonoCap, saldoFinal); //MOSTRAR VALORES EN LA GRILLA
 
-                        sumaCuotas = Math.Round(sumaCuotas + valorCuota, 2); //ACUMULA LAS CUOTAS
+                        sumaCuotas =
+                            Math.Round(sumaCuotas + valorCuota, 2); //ACUMULA LAS CUOTAS
                     }
 
-                    this.lblResultado.Text = "$ " + sumaCuotas.ToString(); //MUESTRA SUMA EN EL LABEL
+                    this.lblResultado.Text =
+                        "$ " + sumaCuotas.ToString(); //MUESTRA SUMA EN EL LABEL
                 }
 
             }
@@ -80,13 +96,16 @@ namespace TablaAmortizacion
         {
             try
             {
-                double monto = Convert.ToDouble(this.textMonto.Text);
-                double tasainteres = Convert.ToDouble(this.textInteres.Text);
-                int plazos = Convert.ToInt16(this.textPlazos.Text);
+                decimal monto = 
+                    Convert.ToDecimal(this.textMonto.Text);
+                decimal tasainteres = 
+                    Convert.ToDecimal(this.textInteres.Text);
+                int plazos = 
+                    Convert.ToInt16(this.textPlazos.Text);
 
                 tasainteres = tasainteres / 100;
 
-                double intereses = 0,
+                decimal intereses = 0,
                     valorCuota = 0,
                     saldoFinal = 0,
                     sumaCuotas = 0,
@@ -97,29 +116,41 @@ namespace TablaAmortizacion
 
                     //FORMUA DE CUOTA VARIABLE
 
-                    double abonoCap = Math.Round(monto / plazos, 2);
+                    decimal abonoCap = Math.Round(monto / plazos, 2);
 
                     saldoFinal = saldoInicial;
-                    
 
-                    for (int I = 1  ; I <= plazos; I++)
+
+                    for (int I = 1; I <= plazos; I++)
                     {
-                        var saldoFinalAnterior = Math.Round(saldoFinal, 2); //SE GUARDA VARIABLE ANTERIOR
-                        intereses = Math.Round(saldoFinal * (tasainteres), 2);
-                        valorCuota = Math.Round(abonoCap + intereses, 2);
-                        saldoFinal = Math.Round(saldoFinal - abonoCap, 2);
+                        var saldoFinalAnterior = 
+                            Math.Round(saldoFinal, 2); //SE GUARDA VARIABLE ANTERIOR
+                        intereses =
+                            Math.Round(saldoFinal * (tasainteres), 2);
+                        valorCuota =
+                            Math.Round(abonoCap + intereses, 2);
+                        saldoFinal = 
+                            Math.Round(saldoFinal - abonoCap, 2);
+
+                        if (saldoFinal < 0.5m)
+                        {
+                            saldoFinal = 0;
+                        }
 
                         dataGridView1.Rows.Add(I, saldoFinalAnterior.ToString(), valorCuota, intereses, abonoCap, saldoFinal); //MOSTRAR VALORES EN LA GRILLA
 
-                        sumaCuotas = Math.Round(sumaCuotas + valorCuota, 2); //ACUMULA LAS CUOTAS
+                        sumaCuotas = 
+                            Math.Round(sumaCuotas + valorCuota, 2); //ACUMULA LAS CUOTAS
                     }
 
-                    this.lblResultado.Text = "$ " + sumaCuotas.ToString(); //MUESTRA SUMA EN EL LABEL
+                    this.lblResultado.Text = 
+                        "$ " + sumaCuotas.ToString(); //MUESTRA SUMA EN EL LABEL
                 }
             }
             catch (Exception ex) //bloque catch para captura de error
             {
-                string error = ex.Message; //acción para manejar el error
+                string error = 
+                    ex.Message; //acción para manejar el error
             }
         }
 
@@ -127,6 +158,17 @@ namespace TablaAmortizacion
         {
 
         }
+
+        //private static T TrySetValue<T>(object value)
+        //{
+
+        //    T result = value is null
+        //               ? (T)Convert.ChangeType("", typeof(T))
+        //               : (T)Convert.ChangeType(value, typeof(T));
+
+        //    return result;
+        //}
+
     }
 }
 
