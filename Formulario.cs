@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TablaAmortizacion.Model;
 
 namespace TablaAmortizacion
 {
@@ -33,26 +34,39 @@ namespace TablaAmortizacion
                     Convert.ToDecimal(this.textInteres.Text);
                 int plazos =
                     Convert.ToInt16(this.textPlazos.Text);
+                decimal aval =
+                    Convert.ToDecimal(this.textAval.Text);
+
+                NumModel modelo = new NumModel();
+                modelo.Monto = monto;
+                modelo.Tasa = tasainteres;
+                modelo.Plazos = plazos; 
+                modelo.Aval = aval;
 
                 tasainteres = tasainteres / 100;
+                aval = Math.Round((monto * (aval / 100)) /plazos, 2);
+
 
                 decimal intereses = 0,
                     abonoCap = 0,
                     saldoFinal = 0,
-                    sumaCuotas = 0,
-                    saldoInicial = monto;
+                    cuotaFinal = 0,
+                    sumaCuotas = 0;
+                decimal saldoInicial = monto;
 
                 if (monto != 0 && plazos != 0 && tasainteres != 0)
                 {
 
                     //FORMUA DE CUOTA FIJA
-                   
+
+                    saldoFinal = saldoInicial;
+
                     decimal resultado = 
                         ((1 - (decimal)Math.Pow(1 + (double)tasainteres, plazos * -1)) / tasainteres);
                     decimal valorCuota =
-                        Math.Round(monto / resultado, 2);
+                        Math.Round((monto / resultado), 2);
 
-                    saldoFinal = saldoInicial;
+
 
                     for (int I = 1; I <= plazos; I++)
                     {
@@ -60,30 +74,37 @@ namespace TablaAmortizacion
                             Math.Round(saldoFinal, 2); //SE GUARDA VARIABLE ANTERIOR
                         intereses = 
                             Math.Round(saldoFinal * tasainteres, 2);
+                        cuotaFinal =
+                             Math.Round(valorCuota + aval, 2);
                         abonoCap = 
                             Math.Round(valorCuota - intereses, 2);
                         saldoFinal = 
-                            Math.Round(saldoFinal - abonoCap, 2);
-
+                            Math.Round(saldoFinal- abonoCap, 2);
+                        
                         if (saldoFinal < 0.5m )
                         {
                             saldoFinal = 0;
                         }
 
-                        dataGridView1.Rows.Add(I, saldoFinalAnterior.ToString(), valorCuota, intereses, abonoCap, saldoFinal); //MOSTRAR VALORES EN LA GRILLA
+                        dataGridView1.Rows.Add(I, saldoFinalAnterior.ToString(), cuotaFinal, intereses, abonoCap, aval, saldoFinal); //MOSTRAR VALORES EN LA GRILLA
 
                         sumaCuotas =
-                            Math.Round(sumaCuotas + valorCuota, 2); //ACUMULA LAS CUOTAS
+                            Math.Round(sumaCuotas + cuotaFinal, 2); //ACUMULA EL VALOR DE LAS CUOTAS
                     }
 
                     this.lblResultado.Text =
-                        "$ " + sumaCuotas.ToString(); //MUESTRA SUMA EN EL LABEL
+                        "$ " + sumaCuotas.ToString(); //MUESTRA SUMA DE CUOTAS EN EL LABEL
+                }
+                else
+                {
+                    MessageBox.Show("Asegurese de ingresar un valor en todos los campos solicitados en Datos del Crédito.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             catch (Exception ex) //bloque catch para captura de error
             {
-                string error = ex.Message; //acción para manejar el error
+                //acción para manejar el error
+                MessageBox.Show(ex.Message);    
             }
         }
 
@@ -102,12 +123,16 @@ namespace TablaAmortizacion
                     Convert.ToDecimal(this.textInteres.Text);
                 int plazos = 
                     Convert.ToInt16(this.textPlazos.Text);
+                decimal aval =
+                    Convert.ToDecimal(this.textAval.Text);
 
                 tasainteres = tasainteres / 100;
+                aval = Math.Round((monto * (aval / 100)) / plazos, 2);
 
                 decimal intereses = 0,
                     valorCuota = 0,
                     saldoFinal = 0,
+                    cuotaFinal = 0,
                     sumaCuotas = 0,
                     saldoInicial = monto;
 
@@ -126,9 +151,11 @@ namespace TablaAmortizacion
                         var saldoFinalAnterior = 
                             Math.Round(saldoFinal, 2); //SE GUARDA VARIABLE ANTERIOR
                         intereses =
-                            Math.Round(saldoFinal * (tasainteres), 2);
+                            Math.Round(saldoFinal * tasainteres, 2);
                         valorCuota =
                             Math.Round(abonoCap + intereses, 2);
+                        cuotaFinal =
+                             Math.Round(valorCuota + aval, 2);
                         saldoFinal = 
                             Math.Round(saldoFinal - abonoCap, 2);
 
@@ -136,40 +163,107 @@ namespace TablaAmortizacion
                         {
                             saldoFinal = 0;
                         }
-
-                        dataGridView1.Rows.Add(I, saldoFinalAnterior.ToString(), valorCuota, intereses, abonoCap, saldoFinal); //MOSTRAR VALORES EN LA GRILLA
+                        
+                        dataGridView1.Rows.Add(I, saldoFinalAnterior.ToString(), cuotaFinal, intereses, abonoCap, aval, saldoFinal); //MOSTRAR VALORES EN LA GRILLA
 
                         sumaCuotas = 
-                            Math.Round(sumaCuotas + valorCuota, 2); //ACUMULA LAS CUOTAS
+                            Math.Round(sumaCuotas + cuotaFinal, 2); //ACUMULA EL VALOR DE LAS CUOTAS
                     }
 
                     this.lblResultado.Text = 
-                        "$ " + sumaCuotas.ToString(); //MUESTRA SUMA EN EL LABEL
+                        "$ " + sumaCuotas.ToString(); //MUESTRA SUMA DE CUOTAS EN EL LABEL
+                }
+                else
+                {
+                    MessageBox.Show("Asegurese de ingresar un valor en todos los campos solicitados en Datos del Crédito.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex) //bloque catch para captura de error
             {
-                string error = 
-                    ex.Message; //acción para manejar el error
+                MessageBox.Show(ex.Message); //acción para manejar el error
             }
         }
 
-        private void Formulario_Load(object sender, EventArgs e)
+        //MENU
+        //REGISTRAR
+        private void tslRegistrar_Click(object sender, EventArgs e)
         {
+
+            if (ValidarNombre() == false)
+            {
+                return;
+            }
+            if (ValidarIdentificacion() == false)
+            {
+                return;
+            }
+            if (ValidarFechaNacimiento() == false)
+            {
+                return;
+            }
+
+
 
         }
 
-        //private static T TrySetValue<T>(object value)
-        //{
+        //VALIDACIONES
+        //-Validación de Identificación para que salga o no error provider
+        private bool ValidarFechaNacimiento()
+        {
+            int days = DateTime.Now.Date.Subtract(dtpFecha.Value.Date).Days;
+            int years= days / 365;
 
-        //    T result = value is null
-        //               ? (T)Convert.ChangeType("", typeof(T))
-        //               : (T)Convert.ChangeType(value, typeof(T));
+            if (years < 18)
+            {
+                erpError.SetError(dtpFecha, "Debe ser mayor de edad");
+                return false;
+            }
+            else
+            {
+                erpError.SetError(dtpFecha, ""); 
+                return true;
+            }
+        }
 
-        //    return result;
-        //}
+        //-Validación de Identificación para que salga o no error provider
+        private bool ValidarIdentificacion()
+        {
+            int NumIdentificacion;
 
+            if (!int.TryParse(textIdentificacion.Text, out NumIdentificacion) || string.IsNullOrEmpty(textIdentificacion.Text) || textIdentificacion.Text.StartsWith(" "))
+            {
+                
+                erpError.SetError(textIdentificacion, "Debe ingresar un número de identificación");
+
+                textIdentificacion.Clear(); //Limpia cuadro de texto
+                textIdentificacion.Focus(); //Enfoca el cuadro de texto
+
+                return false;
+            }
+            else
+            {
+                erpError.SetError(textIdentificacion, "");
+                return true;
+            }
+        }
+
+        //-Validacion de nombre para que salga o no error provider
+        private bool ValidarNombre()
+        {
+
+            if (string.IsNullOrEmpty(textNombre.Text) || textNombre.Text.StartsWith(" ")) 
+            {
+                erpError.SetError(textNombre, "Debe ingresar un nombre");
+                return false;
+            }
+          
+            else
+            {
+                erpError.SetError(textNombre, "");
+                return true;
+            }
+        }
     }
 }
 
-    
+

@@ -15,3 +15,21 @@ C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización\obj\Debug\net6.0-
 C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización\obj\Debug\net6.0-windows\TablaAmortizacion.pdb
 C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización\obj\Debug\net6.0-windows\TablaAmortizacion.genruntimeconfig.cache
 C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización\obj\Debug\net6.0-windows\ref\TablaAmortizacion.dll
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\bin\Debug\net6.0-windows\TablaAmortizacion.exe
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\bin\Debug\net6.0-windows\TablaAmortizacion.deps.json
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\bin\Debug\net6.0-windows\TablaAmortizacion.runtimeconfig.json
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\bin\Debug\net6.0-windows\TablaAmortizacion.dll
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\bin\Debug\net6.0-windows\TablaAmortizacion.pdb
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.csproj.AssemblyReference.cache
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.Formulario.resources
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.csproj.GenerateResource.cache
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.AssemblyInfoInputs.cache
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.AssemblyInfo.cs
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.csproj.CoreCompileInputs.cache
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.dll
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\refint\TablaAmortizacion.dll
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.pdb
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.genruntimeconfig.cache
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\ref\TablaAmortizacion.dll
+C:\Users\edmunoz\Documents\Proyectos VS\Tabla de amortización - copia\obj\Debug\net6.0-windows\TablaAmortizacion.Properties.Resources.resources
